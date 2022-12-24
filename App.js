@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { s } from "react-native-wind";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Starting New Native Project</Text>
+      <Text style={s`text-red-800`}>Starting New Native Projecsft</Text>
       <StatusBar style="auto" />
     </View>
   );
