@@ -1,21 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { s } from "react-native-wind";
+import PageOne from './Components/PageOne/PageOne';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={s`text-red-800`}>Starting New Native Projecsft</Text>
-      <StatusBar style="auto" />
+      <PageOne />
+      {/* <Text style={s`text-red-800`}>Starting New Native Projecsft</Text>
+      <StatusBar style="auto" /> */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
