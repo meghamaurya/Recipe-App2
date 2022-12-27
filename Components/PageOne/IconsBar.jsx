@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { TouchableHighlight, View, Text } from "react-native";
 import { s } from "react-native-wind";
-import { FontAwesome5 } from "@expo/vector-icons";
-
 const IconsBar = (props) => {
+  const [bgChange, setBgChange] = useState(false);
+  const handlePress = () => {
+    props.setIconClick(props.title);
+    setBgChange(true);
+  };
   return (
     <TouchableHighlight
-      style={s`my-4 w-20`}
-      onPress={() => props.setIconClick(props.title)}
+      underlayColor={"black"}
+      style={s`my-4 w-20 `}
+      onPress={handlePress}
     >
-      <View>
-        <FontAwesome5 name={props.iconName} size={30} color="black" />
-        <Text>{props.title}</Text>
+      <View
+        style={s`items-center bg-violet hover:bg-violet-600 active:bg-violet-300 focus:outline-none focus:ring focus:ring-violet-300`}
+      >
+        <props.iconName size={32} />
+        <Text style={s`items-center `}>{props.title}</Text>
       </View>
     </TouchableHighlight>
   );
