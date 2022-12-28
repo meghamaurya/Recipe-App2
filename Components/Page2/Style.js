@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     favBtn: {
-        boxShadow: '5px 5px 5px #A6A8A8, -5px -5px 5px #ffffff'
+        boxShadow: '0 0 30px 3px rgba(0, 0, 0, 0.1)'
     },
     detailCard: {
         borderRadius: 40
@@ -25,5 +25,15 @@ export const styles = StyleSheet.create({
     },
     Regular: {
         fontFamily: 'KumbhSans_400Regular'
-    }
-  });
+    },
+    stepCenter: {
+        top: 13,
+        left: 3,
+        transform: 'translateX(100%)'
+    },
+    lottie: {
+        width: 100,
+        height: 100
+    },
+    
+});
