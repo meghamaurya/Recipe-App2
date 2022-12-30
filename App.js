@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import PageOne from './Components/PageOne/PageOne';
+import PageOne from './Components/Page1/PageOne';
 
 export default function App() {
   return (
