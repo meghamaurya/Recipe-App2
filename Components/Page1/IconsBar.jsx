@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { TouchableHighlight, View, Text } from "react-native";
 import { s } from "react-native-wind";
 import styles from "./styles";
-import { useFonts, KumbhSans_400Regular } from "@expo-google-fonts/kumbh-sans";
+import { useFonts, KumbhSans_500Medium } from "@expo-google-fonts/kumbh-sans";
 
 const IconsBar = (props) => {
-  const [bgChange, setBgChange] = useState(false);
   let [fontsLoaded] = useFonts({
-    KumbhSans_400Regular,
+    KumbhSans_500Medium,
   });
   if (!fontsLoaded) {
     return null;
@@ -19,12 +18,14 @@ const IconsBar = (props) => {
     return (
       <TouchableHighlight
         underlayColor={"yellow"}
-        style={s`my-4 py-3  w-1/5 rounded-3xl`}
+        style={s`my-4 py-3 mx-1.5 px-0.25  w-1/6 rounded-3xl`}
         onPress={handlePress}
       >
         <View style={s`items-center`}>
-          <props.iconName size={40} />
-          <Text style={[s`items-center text-md`, styles.font400]}>
+          <props.iconName size={40} style={s`text-gray-800`} />
+          <Text
+            style={[s`items-center text-md my-1 text-gray-800`, styles.font500]}
+          >
             {props.title}
           </Text>
         </View>
