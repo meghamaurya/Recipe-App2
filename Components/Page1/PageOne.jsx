@@ -3,7 +3,7 @@ import { View, SafeAreaView, ActivityIndicator } from "react-native";
 import { s } from "react-native-wind";
 import IconsBar from "./IconsBar";
 import Title from "./Heading";
-import SearchBar from "./searchBar";
+import SearchBar from "./SearchBar";
 import { GiHotMeal, GiButterToast, GiFrenchFries } from "react-icons/gi";
 import { FaIceCream } from "react-icons/fa";
 import { IoFastFoodSharp } from "react-icons/io5";
