@@ -7,7 +7,7 @@ import { useFonts, KumbhSans_500Medium } from "@expo-google-fonts/kumbh-sans";
 
 const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {
   useEffect(() => {
-    console.log("search", searchPhrase);
+    // console.log("search", searchPhrase);
   }, [searchPhrase]);
 
   let [fontsLoaded] = useFonts({
