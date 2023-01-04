@@ -10,7 +10,9 @@ import { useState, useEffect } from 'react'
 import Steps from './Steps';
 import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
-import {apiKey} from "@env";
+import {apiKey} from '@env'
+
+
 
 function Page2({ route, navigation }) {
     let [fontsLoaded] = useFonts({
