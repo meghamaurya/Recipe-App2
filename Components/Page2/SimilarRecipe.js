@@ -1,16 +1,31 @@
 import React, {useState, useEffect} from 'react'
-import { ImageBackground, ScrollView, Text, TouchableHighlight, View } from 'react-native';
+import { ScrollView, Text, TouchableHighlight, View } from 'react-native';
 import { s } from 'react-native-wind';
 import { styles } from './Style';
 import { FaRegClock } from "react-icons/fa";
+import {useRef} from 'react'
 
 
 function SimilarRecipe(props) {
+    const scrollRef = useRef();
     const [data, setData] = useState([]);
     const {id, setId} = props;
+
+    /* Scroll to top when similar recipe is clicked */
+    const onScrollTouch = (id) => {
+        setId(id);
+        scrollRef.current?.scrllTo({
+            y: 0,
+            animated: true,
+            behavior: 'smooth'
+        });
+    }
+
+
+    /* Gets Similar Recipes */
     useEffect(() => {
         console.log('Loading Data')
-        fetch(`https://api.spoonacular.com/recipes/${id}/similar?apiKey=${process.env.apiKey}&number=5`)
+        fetch(`https://api.spoonacular.com/recipes/${id}/similar?apiKey=abe7b86f391c4e3fb12b5a6b7074be63&number=5`)
         .then(res => res.json())
         .then((res) => {
             setData(res)
@@ -19,16 +34,14 @@ function SimilarRecipe(props) {
             console.log('Err', err)
         })
     }, [props])
-    useEffect(() => {
-        console.log(data)
-    }, [data])
+    
     return data.length > 0 ? <View style={s`w-full flex flex-col`}>
     <Text style={[s`text-lg`, styles.SemiBold]}>Similar Recipes</Text>
     <ScrollView style={s`flex w-full flex-col`}>
         <View style={s`w-full flex flex-col`}>
             {data.map((eleme, index) => {
                 return (
-                    <TouchableHighlight underlayColor={'transparent'} onPress={() => setId(eleme.id)} key={`similar-${index}`} style={s`w-full flex flex-col mt-4`}>
+                    <TouchableHighlight underlayColor={'transparent'} onPress={() => onScrollTouch(eleme.id)} key={`similar-${index}`} style={s`w-full flex flex-col mt-4`}>
                         <View style={s`w-full flex flex-col`}>
                         
                         <View style={s`flex flex-row items-center mx-0 self-start box-border bg-primary rounded-full px-1.5 py-0.5`}>
