@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react'
 import Steps from './Steps';
 import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
+import {REACT_APP_API_KEY} from '@env'
 
 
 function Page2({navigation}) {
@@ -24,6 +25,7 @@ function Page2({navigation}) {
         KumbhSans_800ExtraBold,
         KumbhSans_900Black,
     });
+    console.log(REACT_APP_API_KEY)
     const [data, setData] = useState({});
     const [recipeStep, setRecipeStep] = useState([]);
     const [calories, setCalories] = useState(0);
