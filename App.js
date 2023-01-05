@@ -1,14 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import PageOne from './Components/Page1/PageOne';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { s } from "react-native-wind";
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <PageOne />
-      {/* <Text style={s`text-red-800`}>Starting New Native Projecsft</Text>
-      <StatusBar style="auto" /> */}
-    </View>
+    <NavigationContainer >
+      <Stack.Navigator >
+        <Stack.Screen name="Home" component={PageOne} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
