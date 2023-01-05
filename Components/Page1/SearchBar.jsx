@@ -18,7 +18,7 @@ const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {
   } else {
     return (
       <View
-        style={s`flex flex-row justify-between w-full p-3 box-border my-3`}
+        style={s`flex flex-row justify-between p-3 mx-2 my-3 rounded-3xl bg-gray-200`}
       >
         <View style={s`flex flex-row justify-between w-full p-3 box-border my-3 rounded-3xl bg-primary`}>
           <TextInput

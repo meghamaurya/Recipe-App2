@@ -1,20 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import PageOne from './Components/Page1/PageOne';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
-import Page2 from './Components/Page2/Page2';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { s } from "react-native-wind";
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator initialRouteName="Home" screenOptions={{
-    headerShown: false
-  }}>
-        <Stack.Screen name='Home' component={PageOne} />
-        <Stack.Screen name='Detail' component={Page2} />
+        headerShown: false
+      }}>
+        <Stack.Screen name="Home" component={PageOne} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, SafeAreaView, ActivityIndicator } from "react-native";
+import { View, SafeAreaView } from "react-native";
+import { REACT_APP_API_KEY } from "@env";
 import { s } from "react-native-wind";
 import IconsBar from "./IconsBar";
 import Title from "./Heading";
@@ -9,36 +10,38 @@ import { FaIceCream } from "react-icons/fa";
 import { IoFastFoodSharp } from "react-icons/io5";
 import Cards from "./Cards";
 
-const PageOne = ({navigation}) => {
+const PageOne = ({ navigation }) => {
   const [searchPhrase, setSearchPhrase] = useState("");
   const [clicked, setClicked] = useState(false);
   const [fakeData, setFakeData] = useState([]);
-  const [iconClick, setIconClick] = useState("meal");
-
+  const [iconClick, setIconClick] = useState("Meal");
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const icons = [
     { id: 1, iconName: GiButterToast, title: "Breakfast" },
     { id: 2, iconName: GiHotMeal, title: "Meal" },
-    { id: 3, iconName: IoFastFoodSharp, title: "Fast Food" },
+    { id: 3, iconName: IoFastFoodSharp, title: "Beverage" },
     { id: 4, iconName: GiFrenchFries, title: "Snack" },
     { id: 5, iconName: FaIceCream, title: "Dessert" },
   ];
+
   useEffect(() => {
     const getData = async () => {
+      setLoading(true);
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=eb2ea6696b854da6b5b2b49c06ee3e22&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${REACT_APP_API_KEY}&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
       );
       const data = await response.json();
-      setFakeData(data.results);
+      if (data.results.length === 0) {
+        setError(true);
+        setLoading(false);
+      } else {
+        setError(false);
+        setFakeData(data.results);
+        setLoading(false);
+      }
     };
     getData();
-  }, [iconClick]);
-
-  useEffect(() => {
-    console.log("fakeData", fakeData);
-  }, [fakeData]);
-
-  useEffect(() => {
-    console.log("iconClick", iconClick);
   }, [iconClick]);
 
   const search = () => {
@@ -47,7 +50,7 @@ const PageOne = ({navigation}) => {
     }
   };
   return (
-    <SafeAreaView style={s`m-0 w-full mb-24 box-border bg-white h-full`}>
+    <SafeAreaView style={s`m-0 w-full box-border bg-gray-50`}>
       <Title />
       <SearchBar
         searchPhrase={searchPhrase}
@@ -56,7 +59,7 @@ const PageOne = ({navigation}) => {
         setClicked={setClicked}
         search={search}
       />
-      <View style={s`flex flex-row w-full justify-between box-border overflow-hidden`}>
+      <View style={s`flex flex-row justify-evenly items-center`}>
         {icons.map((icons) => {
           return (
             <IconsBar
@@ -68,7 +71,13 @@ const PageOne = ({navigation}) => {
           );
         })}
       </View>
-      <Cards data={fakeData} />
+      <Cards
+        data={fakeData}
+        iconClick={iconClick}
+        error={error}
+        loading={loading}
+        // navigation={navigation}
+      />
     </SafeAreaView>
   );
 };
