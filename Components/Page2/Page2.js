@@ -1,6 +1,6 @@
 import '../../wind.config';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, ImageBackground, TouchableHighlight } from 'react-native';
+import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView } from 'react-native';
 import { s } from 'react-native-wind';
 import { FaAngleLeft, FaRegBookmark, FaLayerGroup, FaUserFriends, FaHotjar, FaRegClock } from "react-icons/fa";
 import { styles } from './Style';
@@ -12,7 +12,7 @@ import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
 
 
-function Page2({ route, navigation }) {
+function Page2({navigation}) {
     let [fontsLoaded] = useFonts({
         KumbhSans_100Thin,
         KumbhSans_200ExtraLight,
@@ -47,7 +47,7 @@ function Page2({ route, navigation }) {
 
     }, [id]);
 
-    return !loading ? <View style={s`w-full h-full bg-white flex flex-col box-border`}>
+    return !loading ? <SafeAreaView style={s`w-full h-full bg-white flex flex-col box-border`}>
         <ImageBackground source={data.image} resizeMode="cover" style={s`w-full h-80 resize-cover`}>
             <View style={s`w-full flex items-center justify-between flex-row box-border px-4 py-6`}>
                 <TouchableHighlight onPress={() => navigation.goBack()} underlayColor={'transparent'}>
@@ -97,7 +97,7 @@ function Page2({ route, navigation }) {
 
         </View>
 
-    </View> : <View><Text>Loading...</Text></View>
+    </SafeAreaView> : <View><Text>Loading...</Text></View>
 }
 
 export default Page2;

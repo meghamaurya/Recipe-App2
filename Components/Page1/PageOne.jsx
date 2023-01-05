@@ -9,7 +9,7 @@ import { FaIceCream } from "react-icons/fa";
 import { IoFastFoodSharp } from "react-icons/io5";
 import Cards from "./Cards";
 
-const PageOne = () => {
+const PageOne = ({navigation}) => {
   const [searchPhrase, setSearchPhrase] = useState("");
   const [clicked, setClicked] = useState(false);
   const [fakeData, setFakeData] = useState([]);
@@ -47,7 +47,7 @@ const PageOne = () => {
     }
   };
   return (
-    <SafeAreaView style={s`m-0 w-full box-border`}>
+    <SafeAreaView style={s`m-0 w-full mb-24 box-border bg-white h-full`}>
       <Title />
       <SearchBar
         searchPhrase={searchPhrase}
@@ -56,7 +56,7 @@ const PageOne = () => {
         setClicked={setClicked}
         search={search}
       />
-      <View style={s`flex flex-row w-full`}>
+      <View style={s`flex flex-row w-full justify-between box-border overflow-hidden`}>
         {icons.map((icons) => {
           return (
             <IconsBar

@@ -9,5 +9,8 @@ export default StyleSheet.create({
     },
     font700: {
         fontFamily: 'KumbhSans_700Bold',
+    },
+    input: {
+        outlineStyle: 'none'
     }
 })

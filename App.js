@@ -1,23 +1,22 @@
-<<<<<<< HEAD
-import Page2 from './Components/Page2/Page2';
-=======
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import PageOne from './Components/Page1/PageOne';
->>>>>>> megha
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import Page2 from './Components/Page2/Page2';
 
-export default function App({navigation}) {
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
-<<<<<<< HEAD
-    <Page2  />
-  );
-}
-=======
-    <View style={styles.container}>
-      <PageOne />
-      {/* <Text style={s`text-red-800`}>Starting New Native Projecsft</Text>
-      <StatusBar style="auto" /> */}
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{
+    headerShown: false
+  }}>
+        <Stack.Screen name='Home' component={PageOne} />
+        <Stack.Screen name='Detail' component={Page2} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -29,4 +28,3 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
 });
->>>>>>> megha

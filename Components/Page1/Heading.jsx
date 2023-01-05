@@ -19,7 +19,7 @@ const Page1 = () => {
       <View>
         <Text style={[s`text-gray-800  py-5 p-3 text-4xl`, styles.font700]}>
           Make your own food, stay at{" "}
-          <span style={s`text-yellow-400`}>home</span>
+          <span style={s`text-primary`}>home</span>
         </Text>
       </View>
     );
