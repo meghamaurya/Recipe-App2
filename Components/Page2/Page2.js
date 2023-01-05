@@ -10,8 +10,6 @@ import { useState, useEffect } from 'react'
 import Steps from './Steps';
 import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
-import {apiKey} from '@env'
-
 
 
 function Page2({ route, navigation }) {
@@ -34,8 +32,7 @@ function Page2({ route, navigation }) {
     const [ingredients, setIngredients] = useState([])
 
     useEffect(() => {
-        console.log(apiKey)
-        fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`)
+        fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${'abe7b86f391c4e3fb12b5a6b7074be63'}&includeNutrition=true`)
             .then(res => res.json())
             .then((res) => {
                 setData(res);
