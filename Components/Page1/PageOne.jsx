@@ -29,7 +29,9 @@ const PageOne = ({ navigation }) => {
     const getData = async () => {
       setLoading(true);
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${/* process.env.REACT_APP_API_KEY */'abe7b86f391c4e3fb12b5a6b7074be63'}&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
+          /* process.env.REACT_APP_API_KEY */ "abe7b86f391c4e3fb12b5a6b7074be63"
+        }&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
       );
       const data = await response.json();
       if (data.results.length === 0) {
@@ -71,12 +73,12 @@ const PageOne = ({ navigation }) => {
           );
         })}
       </View>
-      <Cards navigation={navigation}
+      <Cards
+        navigation={navigation}
         data={fakeData}
         iconClick={iconClick}
         error={error}
         loading={loading}
-        // navigation={navigation}
       />
     </SafeAreaView>
   );

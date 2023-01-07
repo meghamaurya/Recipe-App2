@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Page2 from './Components/Page2/Page2'
 const Stack = createNativeStackNavigator();
-import * as dotenv from 'dotenv' 
+import * as dotenv from 'dotenv'
 dotenv.config()
 
 export default function App() {
@@ -23,9 +23,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
 });

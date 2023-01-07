@@ -20,9 +20,15 @@ const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {
       <View
         style={s`flex flex-row justify-between p-3 mx-2 my-3 rounded-3xl bg-primary`}
       >
-        <View style={s`flex flex-row justify-between w-full p-3 box-border my-3 rounded-3xl bg-primary`}>
+        <View
+          style={s`flex flex-row justify-between w-full box-border my-1 rounded-3xl bg-primary`}
+        >
           <TextInput
-            style={[s`ml-2 w-full outline-none text-lg`, styles.font500, styles.input]}
+            style={[
+              s`ml-2 w-full outline-none text-lg`,
+              styles.font500,
+              styles.input,
+            ]}
             placeholder="Search any recipe"
             value={searchPhrase}
             onChangeText={setSearchPhrase}
