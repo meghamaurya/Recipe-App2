@@ -1,3 +1,4 @@
+import "../../wind.config";
 import React, { useState, useEffect } from "react";
 import { View, SafeAreaView } from "react-native";
 import { REACT_APP_API_KEY } from "@env";
@@ -50,7 +51,7 @@ const PageOne = ({ navigation }) => {
     }
   };
   return (
-    <SafeAreaView style={s`m-0 w-full box-border bg-gray-50`}>
+    <SafeAreaView style={s`m-0 w-full box-border bg-white`}>
       <Title />
       <SearchBar
         searchPhrase={searchPhrase}

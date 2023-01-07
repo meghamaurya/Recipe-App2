@@ -20,7 +20,7 @@ const IconsBar = (props) => {
         style={s`my-4 py-3 mx-1.5 px-0.25 justify-evenly rounded-3xl`}
         onPress={handlePress}
       >
-        <View style={s`items-center text-gray-800`}>
+        <View style={s`items-center text-darkGray`}>
           <props.iconName style={s`text-5xl`} />
           <Text style={[s`items-center text-md my-1 `, styles.font600]}>
             {props.title}

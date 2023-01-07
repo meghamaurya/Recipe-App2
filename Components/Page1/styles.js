@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     time: {
         fontFamily: 'KumbhSans_500Medium',
-        backgroundColor: "black",
+        backgroundColor: "#FFD634",
         opacity: 0.7
     }
 }
