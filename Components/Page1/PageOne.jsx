@@ -1,7 +1,6 @@
 import "../../wind.config";
 import React, { useState, useEffect } from "react";
 import { View, SafeAreaView } from "react-native";
-import { REACT_APP_API_KEY } from "@env";
 import { s } from "react-native-wind";
 import IconsBar from "./IconsBar";
 import Title from "./Heading";
@@ -30,7 +29,7 @@ const PageOne = ({ navigation }) => {
     const getData = async () => {
       setLoading(true);
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${REACT_APP_API_KEY}&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${/* process.env.REACT_APP_API_KEY */'abe7b86f391c4e3fb12b5a6b7074be63'}&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
       );
       const data = await response.json();
       if (data.results.length === 0) {
@@ -72,7 +71,7 @@ const PageOne = ({ navigation }) => {
           );
         })}
       </View>
-      <Cards
+      <Cards navigation={navigation}
         data={fakeData}
         iconClick={iconClick}
         error={error}

@@ -3,13 +3,19 @@ import { StyleSheet, Text, View } from 'react-native';
 import PageOne from './Components/Page1/PageOne';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { s } from "react-native-wind";
+import Page2 from './Components/Page2/Page2'
 const Stack = createNativeStackNavigator();
+import * as dotenv from 'dotenv' 
+dotenv.config()
+
 export default function App() {
   return (
     <NavigationContainer >
-      <Stack.Navigator >
+      <Stack.Navigator initialRouteName="Home" screenOptions={{
+        headerShown: false
+      }}>
         <Stack.Screen name="Home" component={PageOne} />
+        <Stack.Screen name="Detail" component={Page2} />
       </Stack.Navigator>
     </NavigationContainer>
   );

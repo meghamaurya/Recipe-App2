@@ -20,19 +20,21 @@ const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {
       <View
         style={s`flex flex-row justify-between p-3 mx-2 my-3 rounded-3xl bg-primary`}
       >
-        <TextInput
-          style={[s`ml-2 text-lg`, styles.font500]}
-          placeholder="Search any recipe"
-          value={searchPhrase}
-          onChangeText={setSearchPhrase}
-        />
-        <Feather
-          name="search"
-          size={22}
-          color="black"
-          style={s`pr-2 pt-1`}
-          onPress={search}
-        />
+        <View style={s`flex flex-row justify-between w-full p-3 box-border my-3 rounded-3xl bg-primary`}>
+          <TextInput
+            style={[s`ml-2 w-full outline-none text-lg`, styles.font500, styles.input]}
+            placeholder="Search any recipe"
+            value={searchPhrase}
+            onChangeText={setSearchPhrase}
+          />
+          <Feather
+            name="search"
+            size={22}
+            color="black"
+            style={s`pr-2 pt-1`}
+            onPress={search}
+          />
+        </View>
       </View>
     );
   }

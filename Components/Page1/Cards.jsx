@@ -27,7 +27,7 @@ const Cards = (props, { navigation }) => {
     return null;
   } else {
     return (
-      <View style={s`m-2  `}>
+      <View style={s`m-2`}>
         <Text
           style={[s`mx-4 text-3xl text-primary capitalize`, styles.font700]}
         >
@@ -51,12 +51,11 @@ const Cards = (props, { navigation }) => {
                       key={item.id}
                       style={s`m-3`}
                       underlayColor={"transparent"}
-                      // onPress={() => {
-                      //   navigation.navigate("Details", {
-                      //     itemId: item.id,
-                      //   }
-                      //   );
-                      // }}
+                      onPress={() => {
+                        props.navigation.navigate("Detail", {
+                          itemId: item.id,
+                        });
+                      }}
                     >
                       <View style={s`flex-1 flex-cols w-40  flex-wrap `}>
                         <Image

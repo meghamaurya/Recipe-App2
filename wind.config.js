@@ -7,7 +7,7 @@ customize({
             secondary: '#A6A8A8',
             textColor: '#8C8F8F',
             gray: '#4b4c4b',
-            darkGray: '#3f3f46'
+            darkGray: '#27272a'
         },
     },
 });

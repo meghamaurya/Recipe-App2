@@ -16,8 +16,8 @@ const IconsBar = (props) => {
     };
     return (
       <TouchableHighlight
-        underlayColor={"yellow"}
-        style={s`my-4 py-3 mx-1.5 px-0.25 justify-evenly rounded-3xl`}
+        underlayColor={"#FFD634"}
+        style={s`my-4 py-3 mx-1.5 px-1 justify-evenly rounded-3xl`}
         onPress={handlePress}
       >
         <View style={s`items-center text-darkGray`}>
