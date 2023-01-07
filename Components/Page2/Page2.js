@@ -31,7 +31,6 @@ function Page2({navigation, route}) {
     const [loading, setLoading] = useState(true);
     const [id, setId] = useState(route.params.itemId);
     const [ingredients, setIngredients] = useState([]);
-
     useEffect(() => {
         fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${'abe7b86f391c4e3fb12b5a6b7074be63'}&includeNutrition=true`)
             .then(res => res.json())
