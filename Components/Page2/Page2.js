@@ -25,7 +25,9 @@ function Page2({navigation}) {
         KumbhSans_800ExtraBold,
         KumbhSans_900Black,
     });
-    console.log(REACT_APP_API_KEY)
+    useEffect(() => {
+        console.log(REACT_APP_API_KEY)
+    }, [REACT_APP_API_KEY])
     const [data, setData] = useState({});
     const [recipeStep, setRecipeStep] = useState([]);
     const [calories, setCalories] = useState(0);
