@@ -24,7 +24,6 @@ function SimilarRecipe(props) {
 
     /* Gets Similar Recipes */
     useEffect(() => {
-        console.log('Loading Data')
         fetch(`https://api.spoonacular.com/recipes/${id}/similar?apiKey=abe7b86f391c4e3fb12b5a6b7074be63&number=5`)
         .then(res => res.json())
         .then((res) => {

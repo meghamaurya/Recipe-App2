@@ -1,6 +1,6 @@
 import '../../wind.config';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView } from 'react-native';
+import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView, ActivityIndicator } from 'react-native';
 import { s } from 'react-native-wind';
 import { FaAngleLeft, FaRegBookmark, FaLayerGroup, FaUserFriends, FaHotjar, FaRegClock } from "react-icons/fa";
 import { styles } from './Style';
@@ -10,10 +10,9 @@ import { useState, useEffect } from 'react'
 import Steps from './Steps';
 import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
-import {REACT_APP_API_KEY} from '@env'
 
 
-function Page2({navigation}) {
+function Page2({navigation, route}) {
     let [fontsLoaded] = useFonts({
         KumbhSans_100Thin,
         KumbhSans_200ExtraLight,
@@ -25,15 +24,13 @@ function Page2({navigation}) {
         KumbhSans_800ExtraBold,
         KumbhSans_900Black,
     });
-    useEffect(() => {
-        console.log(REACT_APP_API_KEY)
-    }, [REACT_APP_API_KEY])
+    
     const [data, setData] = useState({});
     const [recipeStep, setRecipeStep] = useState([]);
     const [calories, setCalories] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [id, setId] = useState('16425');
-    const [ingredients, setIngredients] = useState([])
+    const [id, setId] = useState(route.params.itemId);
+    const [ingredients, setIngredients] = useState([]);
 
     useEffect(() => {
         fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${'abe7b86f391c4e3fb12b5a6b7074be63'}&includeNutrition=true`)
@@ -101,7 +98,7 @@ function Page2({navigation}) {
 
         </View>
 
-    </SafeAreaView> : <View><Text>Loading...</Text></View>
+    </SafeAreaView> : <View><ActivityIndicator size="large" color="#eab32d" style={s`my-10`} /></View>
 }
 
 export default Page2;

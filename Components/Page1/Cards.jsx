@@ -14,7 +14,7 @@ import {
 } from "@expo-google-fonts/kumbh-sans";
 import styles from "./styles";
 
-const Cards = (props, { navigation }) => {
+const Cards = (props) => {
   const details = props.data;
   console.log(details, "cards");
   let [fontsLoaded] = useFonts({
@@ -32,7 +32,7 @@ const Cards = (props, { navigation }) => {
         <Text
           style={[s`mx-4 text-3xl text-yellow-500 capitalize`, styles.font700]}
         >
-          {iconClick}
+          {props.iconClick}
         </Text>
         {props.loading ? (
           <ActivityIndicator size="large" color="#eab32d" style={s`my-10`} />
@@ -52,12 +52,12 @@ const Cards = (props, { navigation }) => {
                       key={item.id}
                       style={s`m-3`}
                       underlayColor={"transparent"}
-                      // onPress={() => {
-                      //   navigation.navigate("Details", {
-                      //     itemId: item.id,
-                      //   }
-                      //   );
-                      // }}
+                       onPress={() => {
+                         props.navigation.navigate("Detail", {
+                           itemId: item.id,
+                         }
+                       );
+                      }}
                     >
                       <View style={s`flex-1 flex-cols w-40  flex-wrap `}>
                         <Image
