@@ -1,5 +1,4 @@
 import '../../wind.config';
-import { StatusBar } from 'expo-status-bar';
 import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView, ActivityIndicator } from 'react-native';
 import { s } from 'react-native-wind';
 import { FaAngleLeft, FaRegBookmark, FaLayerGroup, FaUserFriends, FaHotjar, FaRegClock } from "react-icons/fa";
