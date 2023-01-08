@@ -20,12 +20,7 @@ const Cards = (props, { navigation }) => {
     KumbhSans_500Medium,
     KumbhSans_700Bold,
   });
-  const handleCards = () => {
-    console.log("clicked");
-  };
-  if (!fontsLoaded) {
-    return null;
-  } else {
+  
     return (
       <View style={s`m-2`}>
         <Text
@@ -33,21 +28,22 @@ const Cards = (props, { navigation }) => {
         >
           {props.iconClick}
         </Text>
-        {props.loading ? (
+        {props.loading ? 
           <ActivityIndicator size="large" color="#FFD634" style={s`my-10`} />
-        ) : (
+         :
           <>
             <View style={s`flex-1 flex-row w-full flex-wrap justify-around`}>
-              {props.error ? (
+              {props.error ? 
                 <>
                   <Text style={s`my-10 font-semibold text-2xl text-primary`}>
                     Oops, Recipe not available
                   </Text>
                 </>
-              ) : (
+               : 
                 <>
-                  {props.data.map((item) => (
-                    <TouchableHighlight
+                  {props.data.map((item) => {
+                    return (
+                      <TouchableHighlight
                       key={item.id}
                       style={s`m-3`}
                       underlayColor={"transparent"}
@@ -67,7 +63,7 @@ const Cards = (props, { navigation }) => {
                         >
                           {item.title}
                         </Text>
-                        <Text
+                        <View
                           style={[
                             s`absolute top-4 right-2 text-black rounded-lg px-1 flex flex-row font-bold`,
                             styles.time,
@@ -77,18 +73,18 @@ const Cards = (props, { navigation }) => {
                           <Text style={s`pt-1 `}>
                             {item.readyInMinutes} min
                           </Text>
-                        </Text>
+                        </View>
                       </View>
                     </TouchableHighlight>
-                  ))}
+                    )
+                  })}
                 </>
-              )}
+              }
             </View>
           </>
-        )}
+        }
       </View>
     );
-  }
 };
 
 export default Cards;

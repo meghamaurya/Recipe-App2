@@ -13,9 +13,6 @@ const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {
   let [fontsLoaded] = useFonts({
     KumbhSans_500Medium,
   });
-  if (!fontsLoaded) {
-    return null;
-  } else {
     return (
       <View
         style={s`flex flex-row justify-between p-3 mx-2 my-3 rounded-3xl bg-primary`}
@@ -43,7 +40,6 @@ const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {
         </View>
       </View>
     );
-  }
 };
 
 export default SearchBar;

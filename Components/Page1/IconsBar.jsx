@@ -8,12 +8,9 @@ const IconsBar = (props) => {
   let [fontsLoaded] = useFonts({
     KumbhSans_600SemiBold,
   });
-  if (!fontsLoaded) {
-    return null;
-  } else {
-    const handlePress = () => {
-      props.setIconClick(props.title);
-    };
+  const handlePress = () => {
+    props.setIconClick(props.title);
+  };
     return (
       <TouchableHighlight
         underlayColor={"#FFD634"}
@@ -29,6 +26,5 @@ const IconsBar = (props) => {
       </TouchableHighlight>
     );
   }
-};
 
 export default IconsBar;

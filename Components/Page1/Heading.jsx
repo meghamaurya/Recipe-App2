@@ -7,21 +7,18 @@ import {
   KumbhSans_700Bold,
 } from "@expo-google-fonts/kumbh-sans";
 
-const Page1 = () => {
+const Heading = () => {
   let [fontsLoaded] = useFonts({
     KumbhSans_400Regular,
     KumbhSans_700Bold,
   });
-  if (!fontsLoaded) {
-    return null;
-  } else {
+
     return (
       <View>
         <Text style={[s`text-darkGray py-5 p-3 text-4xl`, styles.font700]}>
-          Make your own food, stay at <span style={s`text-primary`}>home</span>
+          Make your own food, stay at <Text style={s`text-primary`}>home</Text>
         </Text>
       </View>
     );
-  }
 };
-export default Page1;
+export default Heading;

@@ -3,7 +3,7 @@ import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView, Activity
 import { s } from 'react-native-wind';
 import { FaAngleLeft, FaRegBookmark, FaLayerGroup, FaUserFriends, FaHotjar, FaRegClock } from "react-icons/fa";
 import { styles } from './Style';
-import {useFonts, KumbhSans_100Thin, KumbhSans_200ExtraLight, KumbhSans_300Light, KumbhSans_400Regular, KumbhSans_500Medium, KumbhSans_600SemiBold, KumbhSans_700Bold, KumbhSans_800ExtraBold, KumbhSans_900Black,
+import {useFonts, KumbhSans_400Regular, KumbhSans_500Medium, KumbhSans_600SemiBold, KumbhSans_700Bold,
 } from '@expo-google-fonts/kumbh-sans';
 import { useState, useEffect } from 'react'
 import Steps from './Steps';
@@ -13,15 +13,10 @@ import SimilarRecipe from './SimilarRecipe';
 
 function Page2({navigation, route}) {
     let [fontsLoaded] = useFonts({
-        KumbhSans_100Thin,
-        KumbhSans_200ExtraLight,
-        KumbhSans_300Light,
         KumbhSans_400Regular,
         KumbhSans_500Medium,
         KumbhSans_600SemiBold,
         KumbhSans_700Bold,
-        KumbhSans_800ExtraBold,
-        KumbhSans_900Black,
     });
     
     const [data, setData] = useState({});

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { View, SafeAreaView } from "react-native";
 import { s } from "react-native-wind";
 import IconsBar from "./IconsBar";
-import Title from "./Heading";
+import Heading from "./Heading";
 import SearchBar from "./SearchBar";
 import { GiHotMeal, GiButterToast, GiFrenchFries } from "react-icons/gi";
 import { FaIceCream } from "react-icons/fa";
@@ -53,7 +53,7 @@ const PageOne = ({ navigation }) => {
   };
   return (
     <SafeAreaView style={s`m-0 w-full box-border bg-white`}>
-      <Title />
+      <Heading />
       <SearchBar
         searchPhrase={searchPhrase}
         setSearchPhrase={setSearchPhrase}
