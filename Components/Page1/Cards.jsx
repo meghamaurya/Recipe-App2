@@ -31,17 +31,13 @@ const Cards = (props, { navigation }) => {
         {props.loading ? 
           <ActivityIndicator size="large" color="#FFD634" style={s`my-10`} />
          :
-          <>
             <View style={s`flex-1 flex-row w-full flex-wrap justify-around`}>
               {props.error ? 
-                <>
                   <Text style={s`my-10 font-semibold text-2xl text-primary`}>
                     Oops, Recipe not available
                   </Text>
-                </>
                : 
-                <>
-                  {props.data.map((item) => {
+                  props.data.map((item) => {
                     return (
                       <TouchableHighlight
                       key={item.id}
@@ -77,11 +73,9 @@ const Cards = (props, { navigation }) => {
                       </View>
                     </TouchableHighlight>
                     )
-                  })}
-                </>
+                  })
               }
             </View>
-          </>
         }
       </View>
     );

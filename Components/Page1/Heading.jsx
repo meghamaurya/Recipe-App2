@@ -16,7 +16,7 @@ const Heading = () => {
     return (
       <View>
         <Text style={[s`text-darkGray py-5 p-3 text-4xl`, styles.font700]}>
-          Make your own food, stay at <Text style={s`text-primary`}>home</Text>
+          Make your own food, stay at
         </Text>
       </View>
     );
