@@ -13,11 +13,8 @@
     "@expo/webpack-config": "^0.17.2",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/native-stack": "^6.9.7",
-    "eas-cli": "^0.60.0",
-    "expo": "^47.0.12",
-    "expo-cli": "^6.1.0",
+    "expo": "~47.0.9",
     "expo-constants": "~14.0.2",
-    "expo-dev-client": "^2.0.1",
     "expo-font": "~11.0.1",
     "expo-status-bar": "~1.4.2",
     "expo-updates": "~0.15.6",
@@ -29,7 +26,8 @@
     "react-native-screens": "~3.18.0",
     "react-native-web": "~0.18.9",
     "react-native-wind": "^1.2.0",
-    "react-navigation": "^4.4.4"
+    "react-navigation": "^4.4.4",
+    "expo-dev-client": "~2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
