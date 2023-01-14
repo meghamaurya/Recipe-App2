@@ -1,6 +1,11 @@
 {
   "expo": {
     "name": "Recipe-App",
+    "platforms":[
+      "ios",
+      "android",
+      "web"
+    ],
     "slug": "Recipe-App",
     "version": "1.0.0",
     "orientation": "portrait",
