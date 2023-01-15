@@ -12,7 +12,7 @@ import {
   KumbhSans_500Medium,
   KumbhSans_700Bold,
 } from "@expo-google-fonts/kumbh-sans";
-import styles from "./styles";
+import styles from "./Styles";
 import { EvilIcons } from "@expo/vector-icons";
 
 const Cards = (props, { navigation }) => {

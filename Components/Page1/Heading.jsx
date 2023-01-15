@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { s } from "react-native-wind";
-import styles from "./styles";
+import styles from "./Styles";
 import {
   useFonts,
   KumbhSans_400Regular,
