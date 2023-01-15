@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { TouchableHighlight, View, Text } from "react-native";
 import { s } from "react-native-wind";
-import styles from "./styles";
+import styles from "./Styles";
 import { useFonts, KumbhSans_600SemiBold } from "@expo-google-fonts/kumbh-sans";
+import { Ionicons, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 const IconsBar = (props) => {
   let [fontsLoaded] = useFonts({
@@ -18,7 +19,17 @@ const IconsBar = (props) => {
         onPress={handlePress}
       >
         <View style={s`items-center text-darkGray`}>
-          <props.iconName style={s`text-5xl`} />
+          {props.icon === 'fontAwesome' ? 
+        <FontAwesome5 name={props.iconName} style={s`text-5xl`} />
+        : 
+        props.icon === 'Ionicons' ? 
+        <Ionicons name={props.iconName} style={s`text-5xl`} />
+        : 
+        props.icon === 'MaterialCommunityIcons' ? 
+        <MaterialCommunityIcons name={props.iconName} style={s`text-5xl`} />
+        : 
+        <MaterialIcons name={props.iconName} style={s`text-5xl`} />
+        }
           <Text style={[s`items-center text-md my-1 `, styles.font600]}>
             {props.title}
           </Text>

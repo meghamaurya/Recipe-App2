@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { s } from "react-native-wind";
 import { View, TextInput, Keyboard } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import styles from "./styles";
+import styles from "./Styles";
 import { useFonts, KumbhSans_500Medium } from "@expo-google-fonts/kumbh-sans";
 
 const SearchBar = ({ search, searchPhrase, setSearchPhrase }) => {

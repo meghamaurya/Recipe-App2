@@ -1,4 +1,3 @@
-import { FaBlackTie } from "react-icons/fa";
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({

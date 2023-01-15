@@ -5,9 +5,6 @@ import { s } from "react-native-wind";
 import IconsBar from "./IconsBar";
 import Heading from "./Heading";
 import SearchBar from "./SearchBar";
-import { GiHotMeal, GiButterToast, GiFrenchFries } from "react-icons/gi";
-import { FaIceCream } from "react-icons/fa";
-import { IoFastFoodSharp } from "react-icons/io5";
 import Cards from "./Cards";
 
 const PageOne = ({ navigation }) => {
@@ -18,11 +15,11 @@ const PageOne = ({ navigation }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const icons = [
-    { id: 1, iconName: GiButterToast, title: "Breakfast" },
-    { id: 2, iconName: GiHotMeal, title: "Meal" },
-    { id: 3, iconName: IoFastFoodSharp, title: "Beverage" },
-    { id: 4, iconName: GiFrenchFries, title: "Snack" },
-    { id: 5, iconName: FaIceCream, title: "Dessert" },
+    { id: 1, iconName: 'bread-slice', title: "Breakfast", icon:'fontAwesome' },
+    { id: 2, iconName: 'hotjar', title: "Meal", icon:'fontAwesome'},
+    { id: 3, iconName: 'fast-food-sharp', title: "Beverage", icon:'Ionicons' },
+    { id: 4, iconName: 'french-fries', title: "Snack", icon:'MaterialCommunityIcons' },
+    { id: 5, iconName: 'icecream', title: "Dessert", icon:'MaterialIcons' },
   ];
 
   useEffect(() => {
@@ -69,6 +66,7 @@ const PageOne = ({ navigation }) => {
               iconName={icons.iconName}
               title={icons.title}
               setIconClick={setIconClick}
+              icon={icons.icon}
             />
           );
         })}
