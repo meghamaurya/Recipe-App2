@@ -1,7 +1,6 @@
 import '../../wind.config';
 import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView, ActivityIndicator } from 'react-native';
 import { s } from 'react-native-wind';
-import { FaAngleLeft, FaRegBookmark, FaLayerGroup, FaUserFriends, FaHotjar, FaRegClock } from "react-icons/fa";
 import { styles } from './Style';
 import {useFonts, KumbhSans_400Regular, KumbhSans_500Medium, KumbhSans_600SemiBold, KumbhSans_700Bold,
 } from '@expo-google-fonts/kumbh-sans';
@@ -9,6 +8,8 @@ import { useState, useEffect } from 'react'
 import Steps from './Steps';
 import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 
 function Page2({navigation, route}) {
@@ -45,8 +46,8 @@ function Page2({navigation, route}) {
         <ImageBackground source={data.image} resizeMode="cover" style={s`w-full h-80 resize-cover`}>
             <View style={s`w-full flex items-center justify-between flex-row box-border px-4 py-6`}>
                 <TouchableHighlight onPress={() => navigation.goBack()} underlayColor={'transparent'}>
-                    <View style={s`p-4 rounded-full bg-primary shadow-2xl shadow-black`}>
-                        <FaAngleLeft style={s`text-xl bg-primary text-black`} />
+                    <View style={s`box-border w-12 h-12 p-4 flex justify-center items-center rounded-full bg-primary shadow-2xl shadow-black`}>
+                        <FontAwesome5 name="angle-left" style={s`bg-primary text-lg text-black`} />
                     </View>
                 </TouchableHighlight>
             </View>
@@ -58,10 +59,10 @@ function Page2({navigation, route}) {
                 </Text>
 
                 {data ? <View style={[s`w-full flex flex-row justify-between overflow-hidden n px-1 py-8`, styles.card]}>
-                    <RecipeDet desc='Mins' icon={FaRegClock} number={data.readyInMinutes} />
-                    <RecipeDet desc='Servings' icon={FaUserFriends} number={data.servings} />
-                    <RecipeDet desc='Cal' icon={FaHotjar} number={calories} />
-                    <RecipeDet desc='Easy' icon={FaLayerGroup} number={0} />
+                    <RecipeDet desc='Mins' icon='clock' number={data.readyInMinutes} />
+                    <RecipeDet desc='Servings' icon='user-alt' number={data.servings} />
+                    <RecipeDet desc='Cal' icon='hotjar' number={calories} />
+                    <RecipeDet desc='Easy' icon='layer-group' number={0} />
                 </View> : null}
                 <View style={s`w-full mb-4`}>
                     <Text style={[s`text-lg`, styles.SemiBold]}>Ingredients</Text>
