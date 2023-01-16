@@ -13,12 +13,12 @@ const Heading = () => {
     KumbhSans_700Bold,
   });
 
-    return (
-      <View>
-        <Text style={[s`text-darkGray py-5 p-3 text-4xl`, styles.font700]}>
-          Make your own food, stay at
-        </Text>
-      </View>
-    );
+  return (
+    <View>
+      <Text style={[s`text-darkGray py-5 p-3 text-4xl`, styles.font700]}>
+        Make your own food, stay at Home
+      </Text>
+    </View>
+  );
 };
 export default Heading;
