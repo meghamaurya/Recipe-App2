@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Recipe-App",
-    "platforms":[
+    "platforms": [
       "ios",
       "android",
       "web"
@@ -34,6 +34,11 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9583a1df-6867-4a04-bdd4-6a04a099b4a4"
+      }
     }
   }
 }
