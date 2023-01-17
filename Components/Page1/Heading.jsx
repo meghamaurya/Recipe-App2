@@ -15,7 +15,9 @@ const Heading = () => {
 
   return (
     <View>
-      <Text style={[s`text-darkGray py-5 p-3 text-4xl`, styles.font700]}>
+      <Text
+        style={[s`text-darkGray py-5 box-border p-2 text-4xl`, styles.font700]}
+      >
         Make your own food, stay at Home
       </Text>
     </View>
