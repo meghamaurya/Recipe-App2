@@ -2,24 +2,26 @@ import '../../wind.config';
 import { Text, View, ImageBackground, TouchableHighlight, SafeAreaView, ActivityIndicator } from 'react-native';
 import { s } from 'react-native-wind';
 import { styles } from './Style';
-import {useFonts, KumbhSans_400Regular, KumbhSans_500Medium, KumbhSans_600SemiBold, KumbhSans_700Bold,
+import {
+    useFonts, KumbhSans_400Regular, KumbhSans_500Medium, KumbhSans_600SemiBold, KumbhSans_700Bold,
 } from '@expo-google-fonts/kumbh-sans';
 import { useState, useEffect } from 'react'
 import Steps from './Steps';
 import RecipeDet from './RecipeDet';
 import SimilarRecipe from './SimilarRecipe';
 import { FontAwesome5 } from '@expo/vector-icons';
+import Constants from "expo-constants";
 
+const { API_KEY } = Constants.manifest?.extra;
 
-
-function Page2({navigation, route}) {
+function Page2({ navigation, route }) {
     let [fontsLoaded] = useFonts({
         KumbhSans_400Regular,
         KumbhSans_500Medium,
         KumbhSans_600SemiBold,
         KumbhSans_700Bold,
     });
-    
+
     const [data, setData] = useState({});
     const [recipeStep, setRecipeStep] = useState([]);
     const [calories, setCalories] = useState(0);
@@ -27,7 +29,7 @@ function Page2({navigation, route}) {
     const [id, setId] = useState(route.params.itemId);
     const [ingredients, setIngredients] = useState([]);
     useEffect(() => {
-        fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${'abe7b86f391c4e3fb12b5a6b7074be63'}&includeNutrition=true`)
+        fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}&includeNutrition=true`)
             .then(res => res.json())
             .then((res) => {
                 setData(res);
@@ -74,7 +76,7 @@ function Page2({navigation, route}) {
                                     <Text style={[s`mr-1 capitalize`, styles.SemiBold]}>{e.name}</Text>
                                 </View>
                             )
-                            
+
                         })}
                     </View>
                 </View>

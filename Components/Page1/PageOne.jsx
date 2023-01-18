@@ -7,6 +7,9 @@ import Heading from "./Heading";
 import SearchBar from "./SearchBar";
 import Cards from "./Cards";
 import styles from "./Styles";
+import Constants from "expo-constants";
+
+const { API_KEY } = Constants.manifest?.extra;
 
 const PageOne = ({ navigation }) => {
   const [searchPhrase, setSearchPhrase] = useState("");
@@ -32,10 +35,7 @@ const PageOne = ({ navigation }) => {
     const getData = async () => {
       setLoading(true);
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
-          // /* process.env.REACT_APP_API_KEY */ "abe7b86f391c4e3fb12b5a6b7074be63"
-          "eb2ea6696b854da6b5b2b49c06ee3e22"
-        }&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${iconClick}&type=${iconClick}&diet=vegetarian&addRecipeInformation=true`
       );
       const data = await response.json();
       if (data.results.length === 0) {
